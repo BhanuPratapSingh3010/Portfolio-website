@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ripple-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.15);
+  animation: ripplePulse 6s linear infinite;
+}
+
+.circle:nth-child(1) {
+  width: 200px;
+  height: 200px;
+  top: 100px;
+  left: 100px;
+}
+
+.circle:nth-child(2) {
+  width: 300px;
+  height: 300px;
+  top: 50px;
+  left: 50px;
+  animation-delay: 2s;
+}
+
+.circle:nth-child(3) {
+  width: 400px;
+  height: 400px;
+  top: 0;
+  left: 0;
+  animation-delay: 4s;
+}
+
+@keyframes ripplePulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
